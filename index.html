@@ -52,8 +52,21 @@
         fetch(apiEndpoint)
             .then(response => response.json())
             .then(json => {
-            let data = json;
-            console.log(json);
+            let data = json["results"];
+            //console.log(json);
+            let list = document.querySelector("div#data ul.mdc-list");
+            //console.log(list);
+            //console.log(data);
+            
+            for (let person of data) {
+                console.log(person);
+                let username = person["login"]["username"];
+                //console.log(username);
+                let lastName = person["name"]["last"];
+                let firstName = person["name"]["first"];
+                //console.log(lastName + ", " + firstName);
+                
+            }
         })
         
 //         const categoryIcons = {"GRAF":"gesture", "SFD":"wb_incandescent", "CSF":"local_atm"}
