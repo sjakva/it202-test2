@@ -66,6 +66,12 @@
                 let firstName = person["name"]["first"];
                 //console.log(lastName + ", " + firstName);
                 
+                let clone = document.querySelector(".list-template").cloneNode(true);
+                console.log(clone);
+                clone.classList.remove("list-template");
+                
+                let userHeader = document.querySelector("div#data");
+                userHeader.textContent = "UserName: " + username;
             }
         })
         
